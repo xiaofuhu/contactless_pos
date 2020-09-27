@@ -28,10 +28,15 @@ public:
     // display a success message and reset
     // card reader for security after 5 seconds,
     // go to Idle state
-    void showSuccess();
+    void displaySuccess();
 
 private:
+    // current status of POS core
     CoreStatus core_status_;
+    // info of display device
+    DisplayConfig display_config_;
+    // pointer to action generator for getting user actions
     ActionGenerator *action_generator_;
+    // pointer to card reader for getting card info
     CardReader *card_reader_;
 };
